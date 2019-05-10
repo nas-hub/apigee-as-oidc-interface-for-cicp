@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LookupCache async="false" continueOnError="false" enabled="true" name="LC_Lookup_StateId_and_ClientId">
+    <DisplayName>LC_Lookup_StateId_and_ClientId</DisplayName>
+    <CacheKey>
+        <Prefix>STATE_CACHE</Prefix>
+        <KeyFragment ref="request.queryparam.state"/>
+        <KeyFragment>client_id</KeyFragment>
+    </CacheKey>
+    <CacheResource>IdP_OIDC_STATE_MAP_CACHE</CacheResource>
+    <Scope>Exclusive</Scope>
+    <AssignTo>originalClientId</AssignTo>
+</LookupCache>

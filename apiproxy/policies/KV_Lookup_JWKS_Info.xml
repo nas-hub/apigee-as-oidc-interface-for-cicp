@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<KeyValueMapOperations async="false" continueOnError="false" enabled="true" name="KV_Lookup_JWKS_Info" mapIdentifier="@kvm_oidc_config_name@">
+    <DisplayName>KV_Lookup_JWKS_Info</DisplayName>
+    <Properties/>
+    <ExpiryTimeInSecs>300</ExpiryTimeInSecs>
+    <ExpiryTimeInSecs>5</ExpiryTimeInSecs>
+    <Get assignTo="private.private_key" index="1">
+        <Key>
+            <Parameter>private_key</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="jwks.kty" index="1">
+        <Key>
+            <Parameter>jwks_kty</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="jwks.n" index="1">
+        <Key>
+            <Parameter>jwks_n</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="jwks.use" index="1">
+        <Key>
+            <Parameter>jwks_use</Parameter>
+        </Key>
+    </Get>
+    <Get assignTo="jwks.e" index="1">
+        <Key>
+            <Parameter>jwks_e</Parameter>
+        </Key>
+    </Get>
+    <Scope>environment</Scope>
+</KeyValueMapOperations>

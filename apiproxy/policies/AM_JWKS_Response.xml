@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_JWKS_Response">
+    <DisplayName>AM_JWKS_Response</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">
+           {"keys":
+       [ {
+            "kty":"{jwks.kty}",
+            "use":"{jwks.use}",
+            "e":"{jwks.e}",
+            "n":"{jwks.n}",
+            "kid":"CICP_JWT_KEY"
+            }
+            ]}
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_Get_Token_Info">
+    <DisplayName>AM_Get_Token_Info</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">
+            {
+            "sub":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.idToken}",
+            "name":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.displayName}",
+            "email":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.email}",
+            "locale":"en.us",
+            "zoneinfo":"US-EAST",
+            "preferred_username":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.displayName}",
+            "given_name":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.displayName}",
+            "family_name":"{oauthv2accesstoken.GO_Get_Token_Info.accesstoken.subject.displayName}",
+            "email_verified":true
+          
+            }
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

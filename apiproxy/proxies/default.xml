@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+    <Description/>
+    <FaultRules/>
+    <PreFlow name="PreFlow">
+        <Request/>
+        <Response/>
+    </PreFlow>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>AM_Add_CORS</Name>
+            </Step>
+        </Response>
+    </PostFlow>
+    <Flows>
+        <Flow name="InitiateLoginPageRedirect">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>VA_Verify_Client_Id</Name>
+                </Step>
+                <Step>
+                    <Name>RF_Invalid_Redirect_URI_BadRequest</Name>
+                    <Condition>(verifyapikey.VA_Verify_Client_Id.redirection_uris != request.queryparam.redirect_uri)</Condition>
+                </Step>
+                <Step>
+                    <Name>PC_Store_Request_Info</Name>
+                </Step>
+                <Step>
+                    <Name>PC_Store_Request_Target</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_Send_Redirect</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/authorize") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="CORS_OPTIONS">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>AM_Add_CORS</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/tokeninfo") and (request.verb = "OPTIONS")</Condition>
+        </Flow>
+        <Flow name="Login">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>LC_Lookup_StateId_and_ClientId</Name>
+                </Step>
+                <Step>
+                    <Name>SC_CICP_Login_Service</Name>
+                </Step>
+                <Step>
+                    <Name>EV_CICP_Login_Response</Name>
+                </Step>
+                <Step>
+                    <Name>AM_Set_OAuth_Response_type</Name>
+                </Step>
+                <Step>
+                    <Name>OA_GenerateAuthorizationCode</Name>
+                </Step>
+            </Request>
+            <Response/>
+            <Condition>(proxy.pathsuffix MatchesPath "/login") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="TokenForCode">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>OA_Token</Name>
+                </Step>
+                <Step>
+                    <Name>KV_Lookup_JWKS_Info</Name>
+                </Step>
+                <Step>
+                    <Name>GJ_GenerateIDToken</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_JWT_Token</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/token") and (request.verb = "POST")</Condition>
+        </Flow>
+        <Flow name="JWKS">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>KV_Lookup_JWKS_Info</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_JWKS_Response</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/jwks") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="UserInfo">
+            <Description/>
+            <Request>
+                <Step>
+                    <Name>OA_OAuth_v20_1</Name>
+                </Step>
+                <Step>
+                    <Name>GO_Get_Token_Info</Name>
+                </Step>
+            </Request>
+            <Response>
+                <Step>
+                    <Name>AM_Get_Token_Info</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/userinfo") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="OIDCWellKnownEndpoint">
+            <Description/>
+            <Request/>
+            <Response>
+                <Step>
+                    <Name>AM_Well_Known_Config</Name>
+                </Step>
+            </Response>
+            <Condition>(proxy.pathsuffix MatchesPath "/.well-known/openid-configuration") and (request.verb = "GET")</Condition>
+        </Flow>
+    </Flows>
+    <HTTPProxyConnection>
+        <BasePath>@proxy_basepath@</BasePath>
+        <Properties/>
+        <VirtualHost>secure</VirtualHost>
+    </HTTPProxyConnection>
+    <RouteRule name="noroute"/>
+</ProxyEndpoint>

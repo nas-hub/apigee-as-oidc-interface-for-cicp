@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="PC_Store_Request_Info">
+    <DisplayName>PC_Store_Request_Info</DisplayName>
+    <CacheKey>
+        <Prefix>STATE_CACHE</Prefix>
+        <KeyFragment ref="request.queryparam.state"/>
+        <KeyFragment>client_id</KeyFragment>
+    </CacheKey>
+    <CacheResource>IdP_OIDC_STATE_MAP_CACHE</CacheResource>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <TimeoutInSec>3600</TimeoutInSec>
+    </ExpirySettings>
+    <Source>request.queryparam.client_id</Source>
+</PopulateCache>

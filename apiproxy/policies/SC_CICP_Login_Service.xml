@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout async="false" continueOnError="false" enabled="true" name="SC_CICP_Login_Service">
+    <DisplayName>SC_CICP_Login_Service</DisplayName>
+    <Properties/>
+    <Request clearPayload="true">
+        <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+        <Set>
+            <Headers>
+                <Header name="Accept">application/json</Header>
+            </Headers>
+            <Verb>POST</Verb>
+            <Payload contentType="application/json">{"email":"{request.queryparam.userId}","password":"{request.queryparam.password}","returnSecureToken":true}</Payload>
+        </Set>
+    </Request>
+    <Response>calloutResponse</Response>
+    <HTTPTargetConnection>
+        <Properties/>
+        <URL>@backend_login_endpoint@</URL>
+    </HTTPTargetConnection>
+</ServiceCallout>

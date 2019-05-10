@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<APIProxy revision="1" name="@proxy_name@">
+    <ConfigurationVersion minorVersion="0" majorVersion="4"/>
+    <Description>This is an example for IdP_OpenIdConnect_Interface</Description>
+</APIProxy>

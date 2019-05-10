@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PopulateCache async="false" continueOnError="false" enabled="true" name="PC_Store_Request_Target">
+    <DisplayName>PC_Store_Request_Target</DisplayName>
+    <CacheKey>
+        <Prefix>STATE_CACHE</Prefix>
+        <KeyFragment ref="request.queryparam.state"/>
+        <KeyFragment>redirect_uri</KeyFragment>
+    </CacheKey>
+    <CacheResource>IdP_OIDC_STATE_MAP_CACHE</CacheResource>
+    <Scope>Exclusive</Scope>
+    <ExpirySettings>
+        <TimeoutInSec>3600</TimeoutInSec>
+    </ExpirySettings>
+    <Source>request.queryparam.redirect_uri</Source>
+</PopulateCache>

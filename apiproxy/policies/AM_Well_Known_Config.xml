@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_Well_Known_Config">
+    <DisplayName>AM_Well_Known_Config</DisplayName>
+    <Properties/>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">
+           {
+  "issuer": "CICP",
+  "authorization_endpoint": "https://@hostname@@proxy_basepath@/authorize",
+  "token_endpoint": "https://@hostname@@proxy_basepath@/token",
+  "userinfo_endpoint": "https://@hostname@@proxy_basepath@/userinfo",
+  "jwks_uri": "https://@hostname@@proxy_basepath@/jwks",
+  "scopes_supported": [
+    "oidc",
+    "userinfo"
+  ],
+  "response_types_supported": [
+    "code",
+    "id_token",
+    "token id_token"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "client_secret_basic"
+  ],
+  "id_token_signing_alg_values_supported": [
+    "RS256"
+  ]
+}
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

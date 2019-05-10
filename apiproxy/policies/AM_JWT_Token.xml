@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_JWT_Token">
+    <DisplayName>AM_JWT_Token</DisplayName>
+    <Properties/>
+    <Set>
+        <Payload contentType="application/json">
+            {
+            "access_token":"{oauthv2accesstoken.OA_Token.access_token}",
+            "id_token":"{oidcJWTToken}",
+            "expires_in":"{oauthv2accesstoken.OA_Token.subject.expiresIn}"
+            }
+        </Payload>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

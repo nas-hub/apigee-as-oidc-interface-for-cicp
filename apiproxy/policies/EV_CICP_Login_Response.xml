@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="EV_CICP_Login_Response">
+    <DisplayName>EV_CICP_Login_Response</DisplayName>
+    <Properties/>
+    <Source clearPayload="false">calloutResponse</Source>
+    <JSONPayload>
+        <Variable name="subject.localId" type="string">
+            <JSONPath>$.localId</JSONPath>
+        </Variable>
+        <Variable name="subject.registered" type="boolean">
+            <JSONPath>$.registered</JSONPath>
+        </Variable>
+        <Variable name="subject.refreshToken" type="string">
+            <JSONPath>$.refreshToken</JSONPath>
+        </Variable>
+        <Variable name="subject.expiresIn" type="string">
+            <JSONPath>$.expiresIn</JSONPath>
+        </Variable>
+        <Variable name="subject.idToken" type="string">
+            <JSONPath>$.idToken</JSONPath>
+        </Variable>
+        <Variable name="subject.displayName" type="string">
+            <JSONPath>$.displayName</JSONPath>
+        </Variable>
+        <Variable name="subject.email" type="string">
+            <JSONPath>$.email</JSONPath>
+        </Variable>
+        <Variable name="subject.kind" type="string">
+            <JSONPath>$.kind</JSONPath>
+        </Variable>
+    </JSONPayload>
+</ExtractVariables>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GenerateJWT async="false" continueOnError="false" enabled="true" name="GJ_GenerateIDToken">
+    <DisplayName>GJ_GenerateIDToken</DisplayName>
+    <Algorithm>RS256</Algorithm>
+    <PrivateKey>
+        <Value ref="private.private_key"/>
+        <Id>@jwks_key_id@</Id>
+    </PrivateKey>
+    <Subject ref="oauthv2accesstoken.OA_Token.subject.email"/>
+    <Issuer>@jwt_issuer@</Issuer>
+    <Audience ref="oauthv2accesstoken.OA_Token.client_id"/>
+    <ExpiresIn ref="oauthv2accesstoken.OA_Token.subject.expiresIn"/>
+    <AdditionalClaims>
+        <!--<Claim name="access_token" type="string" ref="oauthv2accesstoken.OA_Token.access_token"/>-->
+        <Claim name="local_id" type="string" ref="oauthv2accesstoken.OA_Token.subject.localId"/>
+        <Claim name="registered" type="boolean" ref="oauthv2accesstoken.OA_Token.subject.registered"/>
+        <!--<Claim name="refreshToken" type="string" ref="oauthv2accesstoken.OA_Token.subject.refreshToken"/>-->
+        <!--<Claim name="expires_in" type="string" ref="oauthv2accesstoken.OA_Token.subject.expiresIn"/>-->
+        <Claim name="id_token" type="string" ref="oauthv2accesstoken.OA_Token.subject.idToken"/>
+        <Claim name="display_name" type="string" ref="oauthv2accesstoken.OA_Token.subject.displayName"/>
+        <Claim name="email" type="string" ref="oauthv2accesstoken.OA_Token.subject.email"/>
+        <Claim name="kind" type="string" ref="oauthv2accesstoken.OA_Token.subject.kind"/>
+    </AdditionalClaims>
+    <OutputVariable>oidcJWTToken</OutputVariable>
+</GenerateJWT>

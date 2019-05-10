@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 async="false" continueOnError="false" enabled="true" name="OA_GenerateAuthorizationCode">
+    <DisplayName>OA_GenerateAuthorizationCode</DisplayName>
+    <Operation>GenerateAuthorizationCode</Operation>
+    <Attributes>
+        <Attribute name="subject.localId" ref="subject.localId" display="true"/>
+        <Attribute name="subject.registered" ref="subject.registered" display="true"/>
+        <Attribute name="subject.refreshToken" ref="subject.refreshToken" display="true"/>
+        <Attribute name="subject.expiresIn" ref="subject.expiresIn" display="true"/>
+        <Attribute name="subject.idToken" ref="subject.idToken" display="true"/>
+        <Attribute name="subject.displayName" ref="subject.displayName" display="true"/>
+        <Attribute name="subject.email" ref="subject.email" display="true"/>
+        <Attribute name="subject.kind" ref="subject.kind" display="true"/>
+    </Attributes>
+    <ResponseType>oauth_response_type</ResponseType>
+    <ClientId>oauth_client_id</ClientId>
+    <State>request.queryparam.state</State>
+    <GenerateResponse enabled="true"/>
+</OAuthV2>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="AM_Set_OAuth_Response_type">
+    <DisplayName>AM_Set_OAuth_Response_type</DisplayName>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <AssignVariable>
+        <Name>oauth_response_type</Name>
+        <Value>code</Value>
+    </AssignVariable>
+    <AssignVariable>
+        <Name>oauth_client_id</Name>
+        <Ref>originalClientId</Ref>
+    </AssignVariable>
+    <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

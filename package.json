@@ -1,0 +1,19 @@
+{
+  "name": "IdP_OpenIdConnect_Interface",
+  "version": "1.0.0",
+  "description": "Deploy configurations, shared flows and proxies required for IdP_OpenIdConnect_Interface",
+  "main": "setup.js",
+  "scripts": {
+    "start": "npm install && node setup.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "maven": "latest",
+    "replace-in-file": "latest",
+    "prompt": "latest"
+  }
+}
