@@ -4,7 +4,7 @@
 The solution is based on this Reference Architecture:<br>
 ["Apigee as standards based authentication Interface for an existing Identity Store"](https://github.com/nas-hub/Apigee-Enterprise-Security-Design-Patterns/tree/master/IAM-Integration/IdentityStore-Pattern). 
 
-This is a fully deployable solution, follow instructions [below](https://github.com/nas-hub/apigee-as-oidc-interface-for-cicp#pre-requisites) to install this solution on your Apigee Org.
+This is a fully deployable solution, follow [instructions below](https://github.com/nas-hub/apigee-as-oidc-interface-for-cicp#pre-requisites) to install this solution on your Apigee Org.
 
 
 
