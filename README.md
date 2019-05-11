@@ -1,4 +1,4 @@
-# Apigee as OIDC Interface for [CICP](https://cloud.google.com/blog/products/identity-security/simplifying-identity-and-access-management-for-more-businesses)
+# Apigee as OIDC Interface for [GCIP](https://cloud.google.com/blog/products/identity-security/simplifying-identity-and-access-management-for-more-businesses)
 
 
 The solution is based on this Reference Architecture:<br>
@@ -12,9 +12,9 @@ This is a fully deployable solution, follow instructions [below](https://github.
 
 ### Architecture Modules
 
-**1. GCP Cloud Identity - Email/Password based Authentication Provider** :
+**1. Google Cloud Cloud Identity - Email/Password based Authentication Provider** :
 
-[GCP Identity Platform](https://cloud.google.com/blog/products/identity-security/simplifying-identity-and-access-management-for-more-businesses) provides various Authentication Providers, one such provider is for Email/Password based authentication.  This provider has a REST endpoint for authenticating end users based on Email/Password. The service authenticates end user  and returns a JWT upon successful authentication. More information on this [here](https://firebase.google.com/docs/auth/web/password-auth).
+[GCIP](https://cloud.google.com/blog/products/identity-security/simplifying-identity-and-access-management-for-more-businesses) provides various Authentication Providers, one such provider is for Email/Password based authentication.  This provider has a REST endpoint for authenticating end users based on Email/Password. The service authenticates end user  and returns a JWT upon successful authentication. More information on this [here](https://firebase.google.com/docs/auth/web/password-auth).
 
 
 **2. OIDC Identity Provider Service** :
